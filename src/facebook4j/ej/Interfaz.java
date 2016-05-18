@@ -9,6 +9,8 @@ import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
 import facebook4j.conf.ConfigurationBuilder;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,11 +40,16 @@ public class Interfaz extends javax.swing.JFrame {
         post = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         bpublicar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        urlimg = new javax.swing.JTextField();
+        benviar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        idpost = new javax.swing.JTextField();
+        blike = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Panel.setBackground(new java.awt.Color(0, 153, 255));
-        Panel.setForeground(new java.awt.Color(0, 0, 0));
 
         post.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,37 +66,82 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("URL imagen ->");
+
+        benviar.setText("enviar");
+        benviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                benviarActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("ID  Post->");
+
+        blike.setText("Like");
+        blike.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blikeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bpublicar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bpublicar))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addComponent(idpost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(blike, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(benviar)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(21, 21, 21)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
+                    .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bpublicar))
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(benviar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(idpost, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(blike)))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +154,7 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void postActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postActionPerformed
-        
+
     }//GEN-LAST:event_postActionPerformed
 
     private void bpublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpublicarActionPerformed
@@ -110,7 +162,7 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAAKR76ZCIekcZB4Ba6MIEud90gUxTGgkTMbDE1LPCK3A47jxz3MUVC8vgAXj3iPRNiOKn1cyq36llU28gBxqrs02ZCnUZBAwHnJDLdLJSb6r9yqLsrH8OwZCgNpjDoVnLZAdfZB49cZARMZAhVQxZA62ZCNElFf2tpCkgZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
@@ -121,10 +173,48 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bpublicarActionPerformed
 
+    private void benviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benviarActionPerformed
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthAppId("1100205883375268")
+                .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
+                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
+                .setOAuthPermissions("email,publish_stream,...");
+        FacebookFactory ff = new FacebookFactory(cb.build());
+        Facebook facebook = ff.getInstance();
+        try {
+            facebook.postLink(new URL(urlimg.getText()), "Post con imagen");
+        } catch (FacebookException | MalformedURLException ex) {
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_benviarActionPerformed
+
+    private void blikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blikeActionPerformed
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthAppId("1100205883375268")
+                .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
+                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
+                .setOAuthPermissions("email,publish_stream,...");
+        FacebookFactory ff = new FacebookFactory(cb.build());
+        Facebook facebook = ff.getInstance();
+        try {
+            facebook.likePost(idpost.getText());
+        } catch (FacebookException ex) {
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_blikeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
+    private javax.swing.JButton benviar;
+    private javax.swing.JButton blike;
     private javax.swing.JButton bpublicar;
+    private javax.swing.JTextField idpost;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField post;
+    private javax.swing.JTextField urlimg;
     // End of variables declaration//GEN-END:variables
 }
