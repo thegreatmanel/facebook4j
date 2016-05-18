@@ -162,7 +162,7 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
@@ -178,7 +178,7 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
@@ -194,7 +194,7 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAIFm7v744rjTScq2nkkJyi9pGBpAbel7is1lwxpxJhu8qD1ltpNurm1ArySA5yx0mPLd01N3zUBPnaSQwWhKSmBhzott2FFxUIuaeqhhAWQ5rrlo0nBjJreubjGFTWlltN5kfm6S6psBXHBS92gjHGzqewZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
