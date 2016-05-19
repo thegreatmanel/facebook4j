@@ -46,6 +46,13 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         idpost = new javax.swing.JTextField();
         blike = new javax.swing.JButton();
+        descripcion = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        idpost2 = new javax.swing.JTextField();
+        comentario = new javax.swing.JTextField();
+        comentar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +91,25 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        descripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descripcionActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Descripcion->");
+
+        jLabel5.setText("ID Post ->");
+
+        jLabel6.setText("Comentar->");
+
+        comentar.setText("Comentar");
+        comentar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comentarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -92,28 +118,46 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1))
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLayout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bpublicar))
                     .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(benviar))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addGap(46, 46, 46))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel6)
+                                .addGap(39, 39, 39)))
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(idpost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(blike, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(benviar)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
+                                .addComponent(blike, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(comentario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                    .addComponent(idpost2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(comentar)))))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,18 +167,39 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(post, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bpublicar))
-                .addGap(18, 18, 18)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(benviar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(urlimg, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(benviar)))
+                .addGap(22, 22, 22)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(idpost, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(blike)))
-                .addContainerGap(294, Short.MAX_VALUE))
+                    .addComponent(idpost, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(blike))
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comentario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(idpost2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(comentar)))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,9 +210,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -162,7 +225,7 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
@@ -178,12 +241,12 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
+                .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
                 .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
         try {
-            facebook.postLink(new URL(urlimg.getText()), "Post con imagen");
+            facebook.postLink(new URL(urlimg.getText()), descripcion.getText());
         } catch (FacebookException | MalformedURLException ex) {
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -194,8 +257,8 @@ public class Interfaz extends javax.swing.JFrame {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
-                .setOAuthAccessToken("EAALp9BkJruMBAMcLZAbNYKDCYZCXNyyLQG5c3HZCI0LtHOD8UduofStKQhehkSl3O0T0EjXDMCejxjAv8VRrT6JYYnaoPcIZAl0MoTjLvo0UQY6fA7b2F24pBlggxpxqFVvWt02IgUck1MOZC1NyHvNzZCVJn1h9T9cZCuj1pNaLQZDZD")
-                .setOAuthPermissions("email,publish_stream,...");
+                .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
+                .setOAuthPermissions("publish_actions, user_status");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
         try {
@@ -205,15 +268,42 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_blikeActionPerformed
 
+    private void descripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_descripcionActionPerformed
+
+    private void comentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comentarActionPerformed
+       ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthAppId("1100205883375268")
+                .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
+                .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
+                .setOAuthPermissions("publish_actions, user_status");
+        FacebookFactory ff = new FacebookFactory(cb.build());
+        Facebook facebook = ff.getInstance();
+        try {
+            facebook.commentPhoto(idpost2.getText(), comentario.getName());
+        } catch (FacebookException ex) {
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_comentarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
     private javax.swing.JButton benviar;
     private javax.swing.JButton blike;
     private javax.swing.JButton bpublicar;
+    private javax.swing.JButton comentar;
+    private javax.swing.JTextField comentario;
+    private javax.swing.JTextField descripcion;
     private javax.swing.JTextField idpost;
+    private javax.swing.JTextField idpost2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField post;
     private javax.swing.JTextField urlimg;
     // End of variables declaration//GEN-END:variables
