@@ -247,7 +247,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     }//GEN-LAST:event_postActionPerformed
     /**
-     * Hace una publicación en Facebook
+     * Pones lo que quieres publicar,le das al botón y hace una publicación en Facebook.
      */
     private void bpublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpublicarActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -265,7 +265,7 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bpublicarActionPerformed
     /**
-     * Publica un post con imagen.
+     * Pones el URL de la imagen y una breve descripción,le das al boton y publica un post con imagen.
      */
     private void benviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benviarActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -283,7 +283,7 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_benviarActionPerformed
     /**
-     * Da like a un post con foto.
+     * Pone el ID del Post,le das al botón y da like a un post con foto.
      */
     private void blikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blikeActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -305,7 +305,7 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_descripcionActionPerformed
     /**
-     * Hace un comentario en un post o foto pero me da error.
+     * Pones el ID del Post y el comentario que quieres poner,le das al botón y hace un comentario en un post o foto pero me da error.
      */
     private void comentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comentarActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -323,7 +323,7 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_comentarActionPerformed
     /**
-     * Le paso una letra y me devuelve los usuarios con que coinciden con esa
+     * Le paso una letra,le das al botón y me devuelve los usuarios con que coinciden con esa
      * letra.
      */
     private void busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaActionPerformed
