@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Interfaz gráfica de mi aplicación Facebook4j.
  *
  * @author igonzalezcastro
  */
@@ -245,7 +246,9 @@ public class Interfaz extends javax.swing.JFrame {
     private void postActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postActionPerformed
 
     }//GEN-LAST:event_postActionPerformed
-
+    /**
+     * Hace una publicación en Facebook
+     */
     private void bpublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpublicarActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -261,7 +264,9 @@ public class Interfaz extends javax.swing.JFrame {
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bpublicarActionPerformed
-
+    /**
+     * Publica un post con imagen.
+     */
     private void benviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benviarActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -277,7 +282,9 @@ public class Interfaz extends javax.swing.JFrame {
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_benviarActionPerformed
-
+    /**
+     * Da like a un post con foto.
+     */
     private void blikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blikeActionPerformed
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -297,9 +304,11 @@ public class Interfaz extends javax.swing.JFrame {
     private void descripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descripcionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_descripcionActionPerformed
-
+    /**
+     * Hace un comentario en un post o foto pero me da error.
+     */
     private void comentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comentarActionPerformed
-       ConfigurationBuilder cb = new ConfigurationBuilder();
+        ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
@@ -313,9 +322,12 @@ public class Interfaz extends javax.swing.JFrame {
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_comentarActionPerformed
-
+    /**
+     * Le paso una letra y me devuelve los usuarios con que coinciden con esa
+     * letra.
+     */
     private void busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaActionPerformed
-     ConfigurationBuilder cb = new ConfigurationBuilder();
+        ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
@@ -325,9 +337,9 @@ public class Interfaz extends javax.swing.JFrame {
         Facebook facebook = ff.getInstance();
         try {
             ResponseList<User> results = facebook.searchUsers(tematica.getText());
-       for(User u:results){
-           System.out.println(u.toString());
-       }
+            for (User u : results) {
+                System.out.println(u.toString());
+            }
         } catch (FacebookException ex) {
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
