@@ -8,6 +8,8 @@ package facebook4j.ej;
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
+import facebook4j.ResponseList;
+import facebook4j.User;
 import facebook4j.conf.ConfigurationBuilder;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -53,6 +55,9 @@ public class Interfaz extends javax.swing.JFrame {
         idpost2 = new javax.swing.JTextField();
         comentario = new javax.swing.JTextField();
         comentar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        tematica = new javax.swing.JTextField();
+        busqueda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +115,15 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Tema->");
+
+        busqueda.setText("Buscar");
+        busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busquedaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -156,7 +170,14 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(comentario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                                     .addComponent(idpost2, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(comentar)))))
+                                .addComponent(comentar))))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel7)
+                        .addGap(29, 29, 29)
+                        .addComponent(tematica, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(busqueda)))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
@@ -199,7 +220,12 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(comentar)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tematica, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(busqueda))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -278,7 +304,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .setOAuthAppId("1100205883375268")
                 .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
                 .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
-                .setOAuthPermissions("publish_actions, user_status");
+                .setOAuthPermissions("email,publish_stream,...");
         FacebookFactory ff = new FacebookFactory(cb.build());
         Facebook facebook = ff.getInstance();
         try {
@@ -288,11 +314,31 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_comentarActionPerformed
 
+    private void busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaActionPerformed
+     ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthAppId("1100205883375268")
+                .setOAuthAppSecret("48c52d059781a358e6774f7b5f346d21")
+                .setOAuthAccessToken("EAALp9BkJruMBAC5p6IFntdrx5ZBtmVcvYgmFHhlKMCLWlNdPtYvkiWNq1dZCWQIRs0381s6EfjNYfOwufPD444xUDEFZAB4j1AZAvpnLy3sSL3HRK3TDsao3bPmZBoND6NEolqwzaxBYTtxRBghumXvG5ZB4Ly3SOC1ZBTh2T6XGAZDZD")
+                .setOAuthPermissions("email,publish_stream,...");
+        FacebookFactory ff = new FacebookFactory(cb.build());
+        Facebook facebook = ff.getInstance();
+        try {
+            ResponseList<User> results = facebook.searchUsers(tematica.getText());
+       for(User u:results){
+           System.out.println(u.toString());
+       }
+        } catch (FacebookException ex) {
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_busquedaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
     private javax.swing.JButton benviar;
     private javax.swing.JButton blike;
     private javax.swing.JButton bpublicar;
+    private javax.swing.JButton busqueda;
     private javax.swing.JButton comentar;
     private javax.swing.JTextField comentario;
     private javax.swing.JTextField descripcion;
@@ -304,7 +350,9 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField post;
+    private javax.swing.JTextField tematica;
     private javax.swing.JTextField urlimg;
     // End of variables declaration//GEN-END:variables
 }
