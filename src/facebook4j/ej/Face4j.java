@@ -7,15 +7,15 @@ package facebook4j.ej;
 
 /**
  *
- * @author igonzalezcastro
+ * @author thegreatmanel
  */
-public class Facebook4jEj {
+public class Face4j {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)  {
-       Interfaz ventana = new Interfaz();
+       Botonera ventana = new Botonera();
         ventana.setVisible(true);
 
        
